@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "express": "^4.13.3",
-    "mocha": "^3.0.0"
+    "mocha": "^3.0.0",
+    "@babel/core": "^7.9.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -20,6 +21,7 @@
     "nyc": "^12.0.2" 
   },
   "scripts": {
-    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
+    "build": "babel --out-dir /build ./",
+    "build-dev": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
   }
 }
